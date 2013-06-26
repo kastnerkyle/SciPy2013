@@ -44,6 +44,7 @@ def logistic_cost_reg_grad(theta, X, y, l=.1):
     reg = float(l)/m*np.sum(np.vstack((np.zeros(1), theta[1:,:])))
     return np.ravel(logistic_cost_grad(theta,X,y) + reg)
 
+#Perform classification of MNIST digits
 from sklearn import datasets
 digits = datasets.load_digits()
 X = digits.data
@@ -80,6 +81,7 @@ for c in range(num_labels):
     theta0 = np.zeros((X.shape[1],))
     #fmin_cg requires the cost and cost_grad functions to return flattened 1D arrays!
     #theta = opt.fmin_cg(logistic_cost, theta0, fprime=logistic_cost_grad, args=(X, (y == c)), maxiter=50)
+    #Use regularized cost function
     theta = opt.fmin_cg(logistic_cost_reg, theta0, fprime=logistic_cost_reg_grad, args=(X, (y == c)), maxiter=50)
     all_theta[:,c] = theta
 

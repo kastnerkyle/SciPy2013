@@ -6,7 +6,9 @@ from collections import defaultdict
 import matplotlib.pyplot as plot
 import numpy as np
 
+#Slightly tweak version of scikit-learn sample code
 iris = ds.load_iris()
+
 #project iris data to 2D
 pca = dc.PCA(n_components=2)
 pca.fit(iris.data)
@@ -16,11 +18,12 @@ Y = iris.target
 #Normally try test_size=.2 but we want to see some errors
 X_train, X_test, Y_train, Y_test = cv.train_test_split(X, Y, test_size=.9)
 
-C = 1.0 #Constant
+C = 1.0 #Margin constant
 svc = svm.SVC(kernel="linear", C=C)
 svc.fit(X_train,Y_train)
 Y_pred = svc.predict(X_test)
 
+#Plot decision boundaries
 h=0.2
 clf = svm.SVC(kernel="linear",C=C)
 clf.fit(X,Y)

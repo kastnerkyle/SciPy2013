@@ -32,12 +32,15 @@ def gradient_descent(theta,X,y,alpha,iters):
         theta += float(alpha)*linear_cost_grad(theta,X,y)
     return theta,all_cost
 
+#Perform linear reagression via gradient descent
 theta,all_cost = gradient_descent(theta,X,y,alpha,iters)
 plot.figure()
 plot.title("Cost vs. number of iterations")
 plot.plot(range(len(all_cost)),all_cost)
 plot.figure()
 plot.title("Linear Regression")
+
+#Use only the linear term
 plot.plot(X[:,1], y, 'rx')
 plot.plot(X[:,1], np.dot(X,theta))
 plot.show()

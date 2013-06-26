@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plot
 import numpy as np
 
+#Bayesian estimation of unknown mean, unknown variance on Gaussian data
 total_obs = 1000
 primary_mean = 5.
 primary_var = 4.

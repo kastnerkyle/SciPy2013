@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plot
+
+#Bayesian estimation of unknown variance for Gaussian distributed data
 total_obs = 1000
 primary_mean = known_mean = 5
 primary_var = 4
