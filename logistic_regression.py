@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import numpy as np
 import scipy.optimize as opt
 from scipy.io import loadmat
@@ -48,7 +47,7 @@ def logistic_cost_reg_grad(theta, X, y, l=.1):
 from sklearn import datasets
 digits = datasets.load_digits()
 X = digits.data
-plotdim = 3
+plotdim = 4
 randind = np.random.randint(X.shape[0],size=(plotdim,plotdim))
 f1, axarr = plot.subplots(plotdim,plotdim)
 for i in range(plotdim):

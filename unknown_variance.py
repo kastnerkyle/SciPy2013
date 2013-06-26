@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import numpy as np
 import matplotlib.pyplot as plot
 total_obs = 1000
